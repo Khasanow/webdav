@@ -4,7 +4,7 @@ services:
     container_name: webdav
     image: "chonjay21/webdav:latest"
     ports:
-      - 80:80
+      - 85:80
      # - 443:443
     environment:
       APP_USER_NAME: webdav
@@ -19,7 +19,7 @@ services:
       DIGEST_AUTH_REALM: WebDav                                      #optional
       #- URL_PREFIX=/webdav                                            #optional
     volumes:
-      - /webdav/data:/var/webdav/data
+      - ./volume/files:/var/webdav/data
       #- /webdav/config:/webdav/config                                 #optional
       #- /webdav/server.key:/usr/local/apache2/conf/server.key:ro      #optional
       #- /webdav/server.crt:/usr/local/apache2/conf/server.crt:ro      #optional
